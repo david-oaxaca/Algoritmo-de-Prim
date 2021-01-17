@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Algoritmo de Prim</title>
+
+    <!--jquery-->
+	<script src="Scripts/jquery-3.5.1.min.js"></script>
+
+    <script src='cytoscapeScripts/cytoscape.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="Estilos/PrimStyles.css">
+
+
+</head>
+
+<body>
+
+	<div id="Container">
+
+
+		<div id="Titulo" class="titulo">
+			<h1>Algoritmo de Prim</h1>
+		</div>
+
+		<div id="Container_elems" class="cont-elems">
+			
+			<div id="Container_Inst" class="cont-inst">
+
+				<!--<h2>Demostraci&oacute;n</h2>-->
+				
+				<h3>¿Como se construye un grafo?</h3>
+
+				<h4>Nodes</h4>
+
+				<p>Para crear un nodo has click en cualquier espacio del recuadro blanco.</p>
+
+				<h4>Edges</h4>
+
+				<p>Haz click en dos nodos diferentes para crear una arista (edge), aparecera un recuadro "prompt" donde podras escribir el peso de la arista.</p>
+
+				<p>Si no introduces nada se asignara un peso para la arista al azar.</p>
+
+				<h4>Eliminar elemento y borrar grafo</h4>
+
+				<p>Para eliminar un elemento haz click en el y presiona en el boton "Eliminar elemento" que aparecera posteriormente. Si el elemnto a eliminar es un nodo, se eliminaran todas las aristas relacionadas a el.</p>
+
+				<p>Para borrar el grafo unicamente presiona el boton de "Borrar grafo"</p>
+
+				<div id="eliminarElemento" class="eliminar">
+					<input type="button" name="reset_Prim" id="reset_Prim" value="Borrar grafo" onclick="resetGraph()" class="btn-prim">
+
+					<input type="button" name="eliminar_elem" id="eliminar_elem" value="Eliminar elemento" onclick="eliminarElem()" class="btn-eliminar">
+				</div>
+
+				<h4>Demostraci&oacute;n del algoritmo de Prim</h4>
+
+				<p>Para ver la animacion del algoritmo de Prim asegurate de que en tu grafo todos los nodos esten conectados por una arista minimamente. Posteriormente selecciona el nodo fuente 
+				desde el cual se comenzara el algoritmo</p>
+
+				<div id="demoPrim" class="prim">
+					<input type="button" name="eje_Prim" id="eje_Prim" value="Mostrar el algoritmo de Prim" onclick="recorridoPrim()" class="btn-prim">
+				</div>
+
+			</div>
+			
+
+			<div id="cy"></div>
+
+		</div>
+
+
+		<script type="text/javascript" src="Scripts/PrimScript.js"></script>
+
+	</div>
+
+</body>
+
+</html>
+
