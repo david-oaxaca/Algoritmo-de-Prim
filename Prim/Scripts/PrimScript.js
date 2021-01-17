@@ -2,7 +2,7 @@ var numElems = 0;
 var numEdges = 0;
 
 var prevEdges = [];
-var prevENodes = [];
+var prevNodes = [];
 
 var newEdge = [];
 
@@ -84,12 +84,15 @@ cy.on('tap', 'node',  function(event){
 	newEdge.push(event.target.id());
 	//Si dos nodos diferentes son seleccionados crea una nueva arista
 	if(newEdge.length == 2 && (newEdge[1] != newEdge[0])){
-		//Pregunta con un prompt cual sera el peso de la arista
-
-
-		var Existente = prevEdges.indexOf( (newEdge[0] + newEdge[1]) );
 		
-		if(Existente < 0){
+		//Verificación de que la arista que se va a crear no comparta el mismo target y source que otra
+
+		var ext = prevEdges.indexOf( (newEdge[1] + newEdge[0]));
+		var extInv = prevEdges.indexOf( (newEdge[0] + newEdge[1]));
+		
+		if(ext < 0 && extInv < 0){
+			//Pregunta con un prompt cual sera el peso de la arista
+
 			var edgeWeight = prompt("¿Cual es el peso de esta arista? (Deje en blanco para asignar peso al azar)");
 			if(edgeWeight != null  && !isNaN(edgeWeight)){
 				
