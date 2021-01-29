@@ -15,12 +15,70 @@
 
 <body>
 
-	<div id="Container">
+	<div id="ContainerTeoria">
 
 
 		<div id="Titulo" class="titulo">
 			<h1>Algoritmo de Prim</h1>
+			<h5>Por: David Oaxaca, Saul Martinez y Victor Morales</h5>
 		</div>
+
+
+		<div id="Container_teoria" class="cont-teoria">
+			<hr />
+			<h2>&iquest;Qu&eacute; es el algoritmo de Prim?</h2>
+			<p class="teoria">El algoritmo de Prim es un algoritmo perteneciente a la teor&iacute;a de los grafos para encontrar un &aacute;rbol recubridor m&iacute;nimo en un grafo conexo, no dirigido 
+			y cuyas aristas est&aacute;n etiquetadas.​ Se centra en encontrar un subconjunto de aristas que forman un &aacute;rbol con todos los v&eacute;rtices, donde el peso total de todas las aristas en el &aacute;rbol es el m&iacute;nimo posible.​</p>
+
+			<p class="teoria">
+			La idea detrás del algoritmo de Prim es simple.​ Un &aacute;rbol de expansi&oacute;n significa que todos los v&eacute;rtices deben estar conectados.​ Entonces, los dos subconjuntos disjuntos de v&eacute;rtices deben estar conectados para hacer un  &aacute;rbol de expansi&oacute;n y deben estar conectados con el borde de peso mínimo para convertirlo en un &aacute;rbol de expansi&oacute;n m&iacute;nimo.​ Por lo que el algoritmo de Prim trabaja con grafos ponderados y conexos.
+		    </p>
+
+		    <p class="teoria"><a href="#SubTitulo" > Ir al ejemplo</a></p>
+
+		    <div id="Container_imagenes" class="cont-imgs">
+		    	<!--<img id="Grafo_conexo" src="Imagenes/GrafoConexo.png" alt="Grafo conexo" class="img-graphs" />-->
+		    	<img id="Grafo_ponderado" src="Imagenes/GrafoPonderado3.png" alt="Grafo ponderado" class="img-graphs" />
+		    </div>
+
+		    <hr />
+
+		    <h2>Es un algoritmo Greedy...</h2>
+		    <p class="teoria">Un algoritmo greedy es una estrategia de búsqueda por la cual se sigue una heurística consistente en elegir la opción óptima en cada paso local con la esperanza de llegar a una solución general &oacute;ptima.</p> 
+
+			<p class="teoria">El algoritmo de Prim se clasifica como un algoritmo voraz no solo por ser un algoritmo de optimización definido por una heurística bien definida, sino además por que cumple con los elementos de los que consta la técnica, que son un conjunto de candidatos, y las funciones de solución, selección, factibilidad y objetivo.
+			Además de que en cada iteración el algoritmo de Prim busca al mejor elemento o el más prometedor, para ya no considerarlo en futuras decisiones, el cual es el principio fundamental de los algoritmos greedy.</p>
+
+
+			<br /><br />
+
+			<hr />
+
+		    <h2>&iquest;Cuales son los pasos de este algoritmo?</h2>
+		    <p class="teoria">1) Se crea un conjunto mstSet que realiza un seguimiento de los v&eacute;rtices ya incluidos en MST</p>
+		    <p class="teoria">2) Asigne un valor clave a todos los v&eacute;rtices en el gr&aacute;fico de entrada. Inicialice todos los valores clave como <strong>Infinito</strong>. Asigne un valor de clave como 0 para el primer v&eacute;rtice para que se elija primero.</p>
+		    <p class="teoria">3) Aunque mstSet no incluye todos los v&eacute;rtices:</p>
+		    <div style="padding-left: 5%">
+		    		<p class="teoria">a) Elija un v&eacute;rtice u que no est&eacute; en mstSet y tenga un valor clave m&iacute;nimo</p>
+				    <p class="teoria">b) Incluya <i>u</i> en el mstSet</p>
+				    <p class="teoria">c) Actualice el valor clave de todos los v&eacute;rtices adyacentes de <i>u</i>. Para actualizar los valores clave, recorra en una iteraci&oacute;n todos los v&eacute;rtices adyacentes. Para cada v&eacute;rtice <i>v</i>, si el peso del borde <i>uv</i> es menor que el valor clave del anterior de <i>v</i> actualice el valor clave como peso de <i>uv</i>
+				    </p>
+		    </div>
+		    
+
+		    <div id="Container_imagenes_2" class="cont-imgs">
+		    	<img id="Grafo_prim" src="Imagenes/GrafoPrim.png" alt="Grafo prim" class="img-graphs" />
+		    </div>
+		    
+		</div>
+	<div>
+
+	<div id="Container">
+
+		<div id="SubTitulo" class="titulo">
+			<h1>Ejemplo interactivo</h1>
+		</div>
+
 
 		<div id="Container_elems" class="cont-elems">
 			
@@ -28,7 +86,7 @@
 
 				<!--<h2>Demostraci&oacute;n</h2>-->
 				
-				<h3>¿Como se construye un grafo?</h3>
+				<h3 style="text-align: left; ">&iquest;Como se construye un grafo?</h3>
 
 				<h4>Nodes</h4>
 
@@ -36,15 +94,15 @@
 
 				<h4>Edges</h4>
 
-				<p>Haz click en dos nodos diferentes para crear una arista (edge), aparecera un recuadro "prompt" donde podras escribir el peso de la arista.</p>
+				<p>Haz click en dos nodos diferentes para crear una arista (edge), aparecer&aacute; un recuadro "prompt" donde podr&aacute;s escribir el peso de la arista.</p>
 
 				<p>Si no introduces nada se asignara un peso para la arista al azar.</p>
 
 				<h4>Eliminar elemento y borrar grafo</h4>
 
-				<p>Para eliminar un elemento haz click en el y presiona en el boton "Eliminar elemento" que aparecera posteriormente. Si el elemnto a eliminar es un nodo, se eliminaran todas las aristas relacionadas a el.</p>
+				<p>Para eliminar un elemento haz click en el y presiona en el bot&oacute;n "Eliminar elemento" que aparecer&aacute; posteriormente. Si el elemento a eliminar es un nodo, se eliminaran todas las aristas relacionadas a el.</p>
 
-				<p>Para borrar el grafo unicamente presiona el boton de "Borrar grafo"</p>
+				<p>Para borrar el grafo &uacute;nicamente presiona el bot&oacute;n de "Borrar grafo". Una vez iniciado el recorrido de Prim no podr&aacute;s eliminar elementos o agregar elementos.</p>
 
 				<div id="eliminarElemento" class="eliminar">
 					<input type="button" name="reset_Prim" id="reset_Prim" value="Borrar grafo" onclick="resetGraph()" class="btn-prim">
@@ -52,19 +110,26 @@
 					<input type="button" name="eliminar_elem" id="eliminar_elem" value="Eliminar elemento" onclick="eliminarElem()" class="btn-eliminar">
 				</div>
 
-				<h4>Demostraci&oacute;n del algoritmo de Prim</h4>
+				<h4>Animaci&oacute;n del algoritmo de Prim</h4>
 
-				<p>Para ver la animacion del algoritmo de Prim asegurate de que en tu grafo todos los nodos esten conectados por una arista minimamente. Posteriormente selecciona el nodo fuente 
-				desde el cual se comenzara el algoritmo</p>
+				<p>Para ver la animaci&oacute;n del algoritmo de Prim aseg&uacute;rate de que en tu grafo todos los nodos est&eacute;n conectados por una arista m&iacute;nimamente. Selecciona un nodo, el nodo seleccionado tendrá diferente tonalidad de azul que al resto de nodos. Una vez que inicie la animaci&oacute;n presiona "Reiniciar grafo" para terminarla</p>
 
 				<div id="demoPrim" class="prim">
 					<input type="button" name="eje_Prim" id="eje_Prim" value="Mostrar el algoritmo de Prim" onclick="recorridoPrim()" class="btn-prim">
+					<input type="button" name="reiniciar" id="reiniciar" value="Reiniciar grafo" onclick="resetGraph()" class="btn-reiniciar">
+				</div>
+
+				<div id="indicador-nodesD" style="text-align: center; display: none;">
+					
+					<p style="font-size: 1.4em;"><strong>Observa los nodos recorridos abajo &darr;</strong></p>
+
 				</div>
 
 			</div>
 			
 
 			<div id="cy"></div>
+			
 
 		</div>
 
@@ -72,6 +137,24 @@
 		<script type="text/javascript" src="Scripts/PrimScript.js"></script>
 
 	</div>
+
+
+
+	<div id="Container_display" class="Display-elems">
+
+
+		<div id="Titulo_recorrido" class="titulo"></div>
+
+		<div id="Nodes_display" class="nodes-dis"> </div>
+
+		<br />
+
+		<div id="Titulo_peso" class="titulo" style="padding-bottom: 2%;"></div>
+
+
+	<div>
+
+
 
 </body>
 
